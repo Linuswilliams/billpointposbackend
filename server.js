@@ -23,7 +23,7 @@ const connectDB = async () => {
 const app = express();
 
 const corsOptions = {
-  origin: 'https://blord.vercel.app', 
+  origin: 'https://api.billpointpos.co', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
