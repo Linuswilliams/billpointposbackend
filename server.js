@@ -2,6 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const contactRouter = require('./routes/contact');
+const accountRouter = require('./routes/account');
+const notificationsRouter = require('./routes/notifications')
+const usersRouter = require('./routes/users');
 const posApplicationRouter = require('./routes/posApplication');
 const cors = require('cors')
 dotenv.config();
@@ -23,10 +26,11 @@ const connectDB = async () => {
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3001', 
+  origin: ['https://www.billpointpos.co'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
+
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -34,6 +38,10 @@ app.use(express.json());
 // Use Routes
 app.use('/api', contactRouter);
 app.use('/api', posApplicationRouter);
+app.use('/api', accountRouter);
+app.use('/api', notificationsRouter);
+app.use('/api', usersRouter);
+
 
 
 app.get('/', (req, res) => {
