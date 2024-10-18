@@ -26,7 +26,7 @@ const connectDB = async () => {
 const app = express();
 
 const corsOptions = {
-  origin: ['https://www.billpointpos.co', 'http://localhost:3001'],
+  origin: ['https://www.billpointpos.co', 'https://admin.billpointpos.co'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
