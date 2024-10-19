@@ -25,18 +25,17 @@ const connectDB = async () => {
 
 const app = express();
 
-// Define CORS options for multiple origins
 const allowedOrigins = [
   'https://www.billpointpos.co',
-  'https://admin.billpointpos.co'
+  'https://admin.billpointpos.co',
 ];
+
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (e.g., mobile apps or Postman)
+
     if (!origin) return callback(null, true);
 
-    // Check if the request origin is in the allowed list
     if (allowedOrigins.includes(origin)) {
       callback(null, true);  // Allow access
     } else {
