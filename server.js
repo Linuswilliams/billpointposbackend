@@ -28,6 +28,7 @@ const app = express();
 const allowedOrigins = [
   'https://www.billpointpos.co',
   'https://admin.billpointpos.co',
+  'http://localhost:3000'
 ];
 
 
